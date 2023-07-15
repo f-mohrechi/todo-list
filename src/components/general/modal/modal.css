@@ -1,0 +1,62 @@
+.modal {
+  -webkit-transition: all 0.5s ease-out, z-index 0s linear;
+  transition: all 0.5s ease-out, z-index 0s linear;
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  background-color: rgba(20, 30, 40, 0.4);
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.modal.closing {
+  -webkit-transition: all 0.2s ease-out, z-index 0s linear;
+  transition: all 0.2s ease-out, z-index 0s linear;
+  -webkit-backdrop-filter: blur(0px) saturate(100%);
+  backdrop-filter: blur(0px) saturate(100%);
+  background-color: transparent;
+}
+
+.modal.closing .modalContent {
+  -webkit-animation: fadeout 0.5s;
+  animation: fadeout 0.5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.modal .modalContent {
+  position: relative;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  margin: auto;
+  border: 0px solid #888;
+  width: 80%;
+  overflow: auto;
+  border-radius: 8px;
+  max-height: 100%;
+  margin-top: 20px;
+  -webkit-animation: fadein 0.5s;
+  animation: fadein 0.5s;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.modal .modalContent::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+  display: none;
+}
+
+.blur-back {
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+}

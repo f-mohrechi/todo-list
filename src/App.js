@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "./grid.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { TodoList } from "./pages";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
+import rootReducer from "././reducers";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { applyMiddleware, legacy_createStore } from "redux";
+
+const queryClient = new QueryClient();
+const store = legacy_createStore(rootReducer, applyMiddleware(thunk));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<TodoList />} path="/" />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
