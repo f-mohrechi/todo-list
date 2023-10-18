@@ -14,7 +14,7 @@ const store = legacy_createStore(rootReducer, applyMiddleware(thunk));
 function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename="/todo-list">
         <Routes>
           <Route element={<TodoList />} path="/" />
         </Routes>
