@@ -16,7 +16,7 @@
     "redux-thunk": "^2.4.2",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://https://f-mohrechi.github.io/authentication",
+  "homepage": "https://https://f-mohrechi.github.io/todo-list",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
